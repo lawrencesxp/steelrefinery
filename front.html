@@ -1,0 +1,32 @@
+<html>
+    <title>some kinda simulator maybe</title>
+    <head><b>Steel Refinery</b><br></head>
+    <body>
+        <p><br</p>
+        <p>Steel is made by refining iron<br></p>
+        
+        <p><b>Resource Inventory</b></p>
+        
+        <label for="iron">Iron (tons):</label>
+        <input type="number" id="iron" value="0"><br>
+        
+        <label for="coke">Coke (tons):</label>
+        <input type="number" id="coke" value="0"><br>
+        
+        <label for="limestone">Limestone (tons):</label>
+        <input type="number" id="limestone" value="0"><br>
+
+        <p><b>Financials</b></p>
+        <p> Current account: $<span id="outputBox">100000</span></p>
+
+        <p><b>Talent pool</b></p>
+        <p> Number of workers: <span id="outputBox">20</span></p>
+
+        <button onclick="calculateAndDisplaySteel()">Calculate Steel</button>
+
+        <p>Amount of steel that can be produced: <span id="steelAmount">0</span> tons</p>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>
