@@ -1,31 +1,95 @@
 <html>
     <title>some kinda simulator maybe</title>
-    <head><b>Steel Refinery</b><br></head>
+    <head><b>Steel Refinery</b><br>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Supply Chain Master</title>
+        <style>
+            /* CSS for two-column layout */
+            .container {
+                display: flex; /* Use flexbox to create two columns */
+                justify-content: space-between; /* Space out the columns */
+                width: 100%;
+                max-width: 8000px; /* Adjust as needed */
+                margin: 0 auto; /* Center the container */
+            }
+            .left-column, .right-column {
+                padding: 0px;
+            }
+            .left-column {
+                flex: 3; /* Take up available space */
+            }
+            .right-column {
+                flex: 3; /* Take up available space */
+                text-align: left; /* Align text to the left in the right column */
+            }
+
+        </style></head>
     <body>
+        <div class="container">
+            <!-- Left Column (Existing Content) -->
+            <div class="left-column">
         <p><br</p>
-        <p>Steel is made by refining iron<br></p>
+        <p>Steel is made by refining iron with coke and limestone. One ton of steel is created by processing 1.5 tons of iron, 0.5 tons of coal and 0.25 tons of limestone.<br></p>
         
         <p><b>Resource Inventory</b></p>
-        
-        <label for="iron">Iron (tons):</label>
-        <input type="number" id="iron" value="0"><br>
-        
-        <label for="coke">Coke (tons):</label>
-        <input type="number" id="coke" value="0"><br>
-        
-        <label for="limestone">Limestone (tons):</label>
-        <input type="number" id="limestone" value="0"><br>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <label for="iron" style="width: 120px;">Iron (tons):</label>
+            <input type="number" id="iron" value="0" style="width: 100px;">
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <label for="coke" style="width: 120px;">Coke (tons):</label>
+            <input type="number" id="coke" value="0" style="width: 100px;">
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <label for="limestone" style="width: 120px;">Limestone (tons):</label>
+            <input type="number" id="limestone" value="0" style="width: 100px;">
+        </div>
+
 
         <p><b>Financials</b></p>
         <p> Current account: $<span id="outputBox">100000</span></p>
 
-        <p><b>Talent pool</b></p>
-        <p> Number of workers: <span id="outputBox">20</span></p>
+        <button onclick="calculateAndDisplaySteel()">Refine steel</button>
 
-        <button onclick="calculateAndDisplaySteel()">Calculate Steel</button>
+        <p>Amount of steel that can be produced: <span id="steelAmount">0</span> tons
+        <br>Market Price: $880/ton</p>
+    </div>
 
-        <p>Amount of steel that can be produced: <span id="steelAmount">0</span> tons</p>
+    <!-- Right Column (New Content) -->
+    <div class="right-column">
+        <p><b>Procurement</b><br>Price of Iron: $115/ton<br>
+            Coke Price: $275/ton<br>
+            Limestone Price: $35/ton<br>
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 1px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <label for="b_iron" style="width: 120px;">Buy Iron</label>
+                <input type="number" id="b_iron" value="0" style="width: 100px;">
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <label for="b_coke" style="width: 120px;">Buy Coke</label>
+                <input type="number" id="b_coke" value="0" style="width: 100px;">
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                    <label for="b_limestone" style="width: 120px;">Buy Limestone</label>
+                    <input type="number" id="b_limestone" value="0" style="width: 100px;">
+            </div>
+        </div>
 
+        <p><b>Talent pool</b><br>Number of workers: <span id="workers">20</span></p>
+        <div style="display: flex; flex-direction: column; gap: 1px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <label for="hireWorkers" style="width: 120px;">Hire more workers</label>
+                <input type="number" id="hireWorkers" value="0" style="width: 100px;">
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <label for="fireWorkers" style="width: 120px;">Fire workers</label>
+                <input type="number" id="fireWorkers" value="0" style="width: 100px;">
+            </div>
+        </div>
+        <br><button onclick="updateTalentPool()">Update Talent Pool</button>
+    </div>
         <script src="script.js"></script>
 
     </body>
