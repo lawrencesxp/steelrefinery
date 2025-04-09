@@ -12,7 +12,7 @@ function updateOrder(){
   b_iron = parseInt(document.getElementById("b_iron").value)|| 0;
   b_coke = parseInt(document.getElementById("b_coke").value)|| 0;
   b_limestone = parseInt(document.getElementById("b_limestone").value)|| 0;
-
+  
   iron = iron + b_iron;
   coke = coke + b_coke;
   limestone = limestone + b_limestone;
@@ -21,10 +21,7 @@ function updateOrder(){
   document.getElementById("coke").innerText = coke;
   document.getElementById("limestone").innerText = limestone;
 
-  // Reset the input fields to 0
-  document.getElementById("b_iron").value = "";
-  document.getElementById("b_coke").value = "";
-  document.getElementById("b_limestone").value = "";
+
 }
 
 function calculateSteel(iron, coke, limestone) {
@@ -35,6 +32,18 @@ function calculateSteel(iron, coke, limestone) {
   return Math.floor(Math.min(steelFromIron, steelFromCoke, steelFromLimestone));
 }
 
+function rawprices(){
+  b_iron = parseInt(document.getElementById("b_iron").value)|| 0;
+  b_coke = parseInt(document.getElementById("b_coke").value)|| 0;
+  b_limestone = parseInt(document.getElementById("b_limestone").value)|| 0;
+  c_procure = (b_iron * 115) + (b_coke * 275) + (b_limestone * 35);
+  document.getElementById("c_procure").innerText = c_procure;
+
+  // Reset the input fields to 0
+  document.getElementById("b_iron").value = "";
+  document.getElementById("b_coke").value = "";
+  document.getElementById("b_limestone").value = "";
+}
 function calculateAndDisplaySteel() {
   const iron = parseFloat(document.getElementById("iron").innerText);
   const coke = parseFloat(document.getElementById("coke").innerText);
@@ -42,7 +51,7 @@ function calculateAndDisplaySteel() {
 
   const steelAmount = calculateSteel(iron, coke, limestone);
 
-  document.getElementById("steelAmount").textContent = steelAmount;
+  document.getElementById("steelAmount").innerText = steelAmount;
 }
 
   function updateTalentPool() {
@@ -65,6 +74,8 @@ function calculateAndDisplaySteel() {
     document.getElementById("fireWorkers").value = "";
 }
 let RefinedSteel = 0;
+let efficiency = 0;
+efficiency = parseInt(document.getElementById("efficiency").innerText)
 RefinedSteel = parseInt(document.getElementById("RefinedSteel").innerText)|| 0;
 
 function RefineSteel(){
@@ -73,17 +84,17 @@ function RefineSteel(){
   const limestone = parseFloat(document.getElementById("limestone").innerText);
 
   const steelAmount = calculateSteel(iron, coke, limestone);
-  RefinedSteel = RefinedSteel + steelAmount;
+  RefinedSteel = (RefinedSteel + steelAmount) * (efficiency/100);
   document.getElementById("RefinedSteel").textContent = RefinedSteel;
   document.getElementById("iron").innerText = "0";
   document.getElementById("coke").innerText = "0";
   document.getElementById("limestone").innerText = "0";
+  document.getElementById("steelAmount").innerText = "0";
 }
 // Initialize variables by reading from the webpage
 let currentaccount = parseInt(document.getElementById("currentaccount").innerText);
 let expenses = parseInt(document.getElementById("expenses").innerText);
 let forecast = 0; // Initialize to 0 since the span is empty
-let efficiency = 0;
 
 setInterval(function() {
     forecast = currentaccount - expenses;
