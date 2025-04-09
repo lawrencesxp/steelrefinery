@@ -26,6 +26,7 @@
 
         </style></head>
     <body>
+       
         <div class="container">
             <!-- Left Column (Existing Content) -->
             <div class="left-column">
@@ -33,22 +34,14 @@
         <p>Steel is made by refining iron with coke and limestone. One ton of steel is created by processing 1.5 tons of iron, 0.5 tons of coal and 0.25 tons of limestone.<br></p>
         
         <p><b>Resource Inventory</b></p>
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <label for="iron" style="width: 120px;">Iron (tons):</label>
-            <input type="number" id="iron" value="0" style="width: 100px;">
-        </div>
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <label for="coke" style="width: 120px;">Coke (tons):</label>
-            <input type="number" id="coke" value="0" style="width: 100px;">
-        </div>
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <label for="limestone" style="width: 120px;">Limestone (tons):</label>
-            <input type="number" id="limestone" value="0" style="width: 100px;">
-        </div>
-
+        <p>Iron (tons): <span id="iron"></span></p>
+        <p>Coke (tons): <span id="coke"></span></p>
+        <p>Limestone (tons): <span id="limestone"></span></p>
 
         <p><b>Financials</b></p>
-        <p> Current account: $<span id="outputBox">100000</span></p>
+        <p> Current account: $<span id="currentaccount">100000</span><br>
+            Projected expenses: $<span id="expenses">85000</span><br>
+            Next month's forecast: $<span id="forecast"></span></p>
 
         <button onclick="calculateAndDisplaySteel()">Refine steel</button>
 
@@ -75,22 +68,22 @@
                     <label for="b_limestone" style="width: 120px;">Buy Limestone</label>
                     <input type="number" id="b_limestone" value="0" style="width: 100px;">
             </div>
-        </div>
+        </div><br><button onclick="updateOrder()">Create order</button>
 
-        <p><b>Talent pool</b><br>Number of workers: <span id="workers">20</span></p>
+        <p><b>Talent pool</b><br>Number of workers: <span id="workers">20</span><br>
+        Plant efficiency: <span id="efficiency"></span>%</p>
         <div style="display: flex; flex-direction: column; gap: 1px;">
             <div style="display: flex; align-items: center; gap: 10px;">
-                <label for="hireWorkers" style="width: 120px;">Hire more workers</label>
-                <input type="number" id="hireWorkers" value="0" style="width: 100px;">
+                <label for="hireWorkers" style="width: 125  px;">Hire more workers</label>
+                <input type="number" id="hireWorkers" value="" style="width: 100px;">
             </div>
             <div style="display: flex; align-items: center; gap: 10px;">
-                <label for="fireWorkers" style="width: 120px;">Fire workers</label>
-                <input type="number" id="fireWorkers" value="0" style="width: 100px;">
+                <label for="fireWorkers" style="width: 125px;">Fire workers</label>
+                <input type="number" id="fireWorkers" value="" style="width: 100px;">
             </div>
         </div>
         <br><button onclick="updateTalentPool()">Update Talent Pool</button>
     </div>
-        <script src="script.js"></script>
-
+    <script src="script.js"></script>
     </body>
 </html>
