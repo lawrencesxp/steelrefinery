@@ -42,11 +42,10 @@
         <p> Current account: $<span id="currentaccount">100000</span><br>
             Projected expenses: $<span id="expenses">85000</span><br>
             Next month's forecast: $<span id="forecast"></span></p>
-
-        <button onclick="calculateAndDisplaySteel()">Refine steel</button>
-
         <p>Amount of steel that can be produced: <span id="steelAmount">0</span> tons
         <br>Market Price: $880/ton</p>
+        <p>Refined Steel: <span id="RefinedSteel"></span> tons</p>
+        <button onclick="RefineSteel()">Refine steel</button>
     </div>
 
     <!-- Right Column (New Content) -->
@@ -68,7 +67,7 @@
                     <label for="b_limestone" style="width: 120px;">Buy Limestone</label>
                     <input type="number" id="b_limestone" value="0" style="width: 100px;">
             </div>
-        </div><br><button onclick="updateOrder()">Create order</button>
+        </div><br><button onclick="updateOrder(),calculateAndDisplaySteel()">Create order</button>
 
         <p><b>Talent pool</b><br>Number of workers: <span id="workers">20</span><br>
         Plant efficiency: <span id="efficiency"></span>%</p>

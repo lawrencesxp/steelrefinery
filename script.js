@@ -64,7 +64,21 @@ function calculateAndDisplaySteel() {
     document.getElementById("hireWorkers").value = "";
     document.getElementById("fireWorkers").value = "";
 }
+let RefinedSteel = 0;
+RefinedSteel = parseInt(document.getElementById("RefinedSteel").innerText)|| 0;
 
+function RefineSteel(){
+  const iron = parseFloat(document.getElementById("iron").innerText);
+  const coke = parseFloat(document.getElementById("coke").innerText);
+  const limestone = parseFloat(document.getElementById("limestone").innerText);
+
+  const steelAmount = calculateSteel(iron, coke, limestone);
+  RefinedSteel = RefinedSteel + steelAmount;
+  document.getElementById("RefinedSteel").textContent = RefinedSteel;
+  document.getElementById("iron").innerText = "0";
+  document.getElementById("coke").innerText = "0";
+  document.getElementById("limestone").innerText = "0";
+}
 // Initialize variables by reading from the webpage
 let currentaccount = parseInt(document.getElementById("currentaccount").innerText);
 let expenses = parseInt(document.getElementById("expenses").innerText);
