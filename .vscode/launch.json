@@ -4,11 +4,12 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open front.html",
-            "file": "/Users/lawrencesxp/Desktop/SupplyChainMaster/front.html"
+            "name": "Open index.html",
+            "file": "/Users/lawrencesxp/Desktop/SupplyChainMaster/index.html"
         }
     ]
 }
