@@ -4,6 +4,15 @@ let limestone = 0;
 let b_iron = 0;
 let b_coke = 0;
 let b_limestone = 0;
+let eaflvl = 1;
+let lflvl = 1;
+let eafmax = 500;
+let lfmax = 500;
+
+document.getElementById("eaflvl").innerText = eaflvl;
+document.getElementById("lflvl").innerText = lflvl;
+document.getElementById("eafmax").innerText = eafmax;
+document.getElementById("lfmax").innerText = lfmax;
 
 function updateOrder(){
   iron = parseInt(document.getElementById("iron").innerText)|| 0;

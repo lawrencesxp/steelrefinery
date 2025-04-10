@@ -31,8 +31,16 @@
             <!-- Left Column (Existing Content) -->
             <div class="left-column">
         <p><br</p>
-        <p>Steel is made by refining iron with coke and limestone. One ton of steel is created by processing 1.5 tons of iron, 0.5 tons of coal and 0.25 tons of limestone.<br></p>
+        <p>Steel is made by refining iron with coke and limestone. One ton of steel is created by processing 1.5 tons of iron,
+             0.5 tons of coal and 0.25 tons of limestone.<br></p>
+        <p><b>Infrastructure</b></p>
+        <p>Electric Arc Furnace (EAF): <span id = "eaflvl"></span><br> (max refining capacity: <span id = "eafmax">
+        </span> tons)</p>
+        <!--<button onclick="procureeaf()">Purchase additional EAF</button><-->
         
+        <p>Ladle Furnace (LF): <span id = "lflvl"></span><br> (max refining capacity: <span id = "lfmax"></span> tons)</p>
+        <!--<button onclick="procurelf()">Purchase additional LF</button><-->
+
         <p><b>Resource Inventory</b></p>
         <p>Iron (tons): <span id="iron"></span></p>
         <p>Coke (tons): <span id="coke"></span></p>
@@ -67,8 +75,8 @@
                     <label for="b_limestone" style="width: 120px;">Buy Limestone</label>
                     <input type="number" id="b_limestone" value="0" style="width: 100px;">
             </div>
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <label for="b_limestone" style="width: 120px;">Procurement cost: </label>
+            <br><div style="display: flex; align-items: center; gap: 10px;">
+                <label for="c_procure" style="width: 120px;">Procurement cost: </label>
                 <output type="number" id="c_procure" value="0" style="width: 100px;">
         </div>
         </div><br><button onclick="updateOrder(),calculateAndDisplaySteel(), rawprices()">Create order</button>
