@@ -115,7 +115,7 @@ setInterval(function() {
   b_coke = parseInt(document.getElementById("b_coke").value)|| 0;
   b_limestone = parseInt(document.getElementById("b_limestone").value)|| 0;
   c_procure = (b_iron * 115) + (b_coke * 275) + (b_limestone * 35);
-  forecast = currentaccount - expenses;
+  forecast = currentaccount + s_income - expenses;
   document.getElementById("forecast").innerText = forecast;
   document.getElementById("currentaccount").innerText = currentaccount;
   document.getElementById("expenses").innerText = expenses;
@@ -131,5 +131,6 @@ function SellSteel(){
 
   RefinedSteel = 0;
   document.getElementById("RefinedSteel").innerText = RefinedSteel;
+  // currentaccount = forecast;
 }
 
