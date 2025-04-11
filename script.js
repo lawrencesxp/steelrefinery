@@ -101,7 +101,7 @@ function updateOrder(){
   document.getElementById("coke").innerText = coke;
   document.getElementById("limestone").innerText = limestone;
 
-  saveGame();
+  // saveGame();
 }
 
 function calculateSteel(iron, coke, limestone) {
@@ -110,7 +110,7 @@ function calculateSteel(iron, coke, limestone) {
   const steelFromLimestone = limestone / 0.25;
 
   return Math.floor(Math.min(steelFromIron, steelFromCoke, steelFromLimestone));
-  saveGame();
+  // saveGame();
 }
 
 function rawprices(){
@@ -126,7 +126,7 @@ function rawprices(){
   document.getElementById("b_iron").value = "";
   document.getElementById("b_coke").value = "";
   document.getElementById("b_limestone").value = "";
-  saveGame();
+  // saveGame();
 }
 
 function calculateAndDisplaySteel() {
@@ -137,7 +137,7 @@ function calculateAndDisplaySteel() {
   const steelAmount = calculateSteel(iron, coke, limestone);
 
   document.getElementById("steelAmount").innerText = steelAmount;
-  saveGame();
+  // saveGame();
 }
 
 function updateTalentPool() {
@@ -158,7 +158,7 @@ function updateTalentPool() {
     // Reset the input fields to 0
     document.getElementById("hireWorkers").value = "";
     document.getElementById("fireWorkers").value = "";
-    saveGame();
+    // saveGame();
 }
 
 function RefineSteel(){
@@ -173,7 +173,7 @@ function RefineSteel(){
   document.getElementById("coke").innerText = "0";
   document.getElementById("limestone").innerText = "0";
   document.getElementById("steelAmount").innerText = "0";
-  saveGame();
+  // saveGame();
 }
 
 setInterval(function() {
@@ -189,7 +189,7 @@ setInterval(function() {
   efficiency = (workers/20) * 100;
   document.getElementById("efficiency").innerText = efficiency;
 
-  saveGame();
+  // saveGame();
 }, 1000); // Runs every 1 seconds
 
 function SellSteel(){
@@ -200,7 +200,7 @@ function SellSteel(){
   RefinedSteel = 0;
   document.getElementById("RefinedSteel").innerText = RefinedSteel;
   // currentaccount = forecast;
-  saveGame();
+  // saveGame();
 }
 
 function resetGame() {
