@@ -25,6 +25,7 @@ let efficiency = 0;
 efficiency = parseInt(document.getElementById("efficiency").innerText)
 RefinedSteel = parseInt(document.getElementById("RefinedSteel").innerText)|| 0;
 
+/* 
 // Function to save the game state to localStorage
 function saveGame() {
   // Create an object with all game state variables
@@ -36,12 +37,8 @@ function saveGame() {
       expenses: expenses,
       forecast: forecast,
       workers: workers,
-      steel: steel,
-      ironPrice: ironPrice,
-      cokePrice: cokePrice,
-      limestonePrice: limestonePrice,
-      steelPrice: steelPrice
-  };
+      // steel: steel,
+  }
 
   // Convert the object to a JSON string and save it to localStorage
   localStorage.setItem("steelRefineryGame", JSON.stringify(gameState));
@@ -65,10 +62,6 @@ function loadGame() {
       forecast = gameState.forecast || 0;
       workers = gameState.workers || 20; // Default if not saved
       steel = gameState.steel || 0;
-      ironPrice = gameState.ironPrice || 115; // Default if not saved
-      cokePrice = gameState.cokePrice || 275; // Default if not saved
-      limestonePrice = gameState.limestonePrice || 35; // Default if not saved
-      steelPrice = gameState.steelPrice || 880; // Default if not saved
 
       // Update the DOM with the loaded values
       document.getElementById("iron").innerText = iron;
@@ -90,6 +83,7 @@ function loadGame() {
 window.onload = function() {
   loadGame(); // Load saved progress
 }
+*/
 
 function updateOrder(){
   iron = parseInt(document.getElementById("iron").innerText)|| 0;
@@ -194,6 +188,7 @@ setInterval(function() {
   let workers = parseInt(document.getElementById("workers").innerText);
   efficiency = (workers/20) * 100;
   document.getElementById("efficiency").innerText = efficiency;
+
   saveGame();
 }, 1000); // Runs every 1 seconds
 
