@@ -26,53 +26,10 @@
                 flex: 1; /* Equal width */
                 text-align: left; /* Kept as per your original */
             }
-            
-            /* ADD THIS: Dialog box styling */
-            #welcomeDialog {
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background-color: #c0c0c0;
-                border: 2px solid black;
-                padding: 20px;
-                width: 400px;
-                display: none;
-                z-index: 1000;
-            }
-
-            #dialogOverlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 999;
-            }
-
-            .dialogButton {
-                margin-top: 10px;
-                padding: 5px 20px;
-            }
         </style>
         <link rel="stylesheet" href="main.css">
         </head>
-    <body id="mainBody">
-        
-        <!-- ADD THIS: Dialog Box -->
-        <div id="dialogOverlay"></div>
-        <div id="welcomeDialog">
-            <center>
-                <img id="representativeImage" src="" width="150" height="100" border="1">
-                <br><br>
-                <font size="4"><b id="companyName"></b></font>
-                <br><br>
-                <font size="3"><p id="welcomeMessage"></p></font>
-                <br>
-                <button class="dialogButton" onclick="closeDialog()">Begin Operations</button>
-            </center>
-        </div>
-        
+    <body>
         <div class="container">
 
             <div class="left-column">
@@ -151,75 +108,6 @@
             <!--<button onclick="procurelf()">Purchase additional LF</button><-->  
             <button onclick="resetGame()">Reset game</button>
     </div>
-    
-    <!-- ADD THIS: Company-specific script BEFORE your existing script.js -->
-    <script>
-    // Company data
-    const companyData = {
-        usa: {
-            name: "US Steel",
-            image: "images/usa-company.jpg",
-            message: "Founded by J.P Morgan in 1901, we were once the backbone of American industrial might. Help America reindustrialize with domestic production, providing jobs and protecting national interests."
-        },
-        china: {
-            name: "Baowu Steel Group",
-            image: "images/china-company.jpg",
-            message: "Wholly owned by the State Council of the People's Republic of China, we are the world's largest steel producer. Let us forge the fruits of socialist labour."
-        },
-        eu: {
-            name: "ArselorMittal",
-            image: "images/eu-company.jpg",
-            message: "we suck crazy style. i am europe i like da ciggarette and unemployment."
-        },
-        russia: {
-            name: "Magnitogorsk Iron & Steel",
-            image: "images/russia-company.jpg",
-            message: "Situated by the great Urals, Magnitogorsk or 'city of the magnetic mountain' was established through Joseph Vissarionovich Stalin's first five-year plans."
-        },
-        japan: {
-            name: "Nippon",
-            image: "images/japan-company.jpg",
-            message: "japan! we are japan! we make steel! japan!"
-        },
-        india: {
-            name: "Tatta Steel",
-            image: "images/india-company.jpg",
-            message: "i really don't know what to put in here."
-        },
-        korea: {
-            name: "POSKO",
-            image: "images/southkorea-company.jpg",
-            message: "steel but korean. that is all there is to say."
-        }
-    };
-
-    // Get company from URL parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    const company = urlParams.get('company') || 'usa'; // Default to USA if no parameter
-
-    // Set background color and show dialog
-    window.onload = function() {
-        const data = companyData[company];
-        
-        // Set background color
-        document.getElementById('mainBody').style.backgroundColor = data.bgcolor;
-        
-        // Set dialog content
-        document.getElementById('companyName').innerText = data.name;
-        document.getElementById('representativeImage').src = data.image;
-        document.getElementById('welcomeMessage').innerText = data.message;
-        
-        // Show dialog
-        document.getElementById('dialogOverlay').style.display = 'block';
-        document.getElementById('welcomeDialog').style.display = 'block';
-    };
-
-    function closeDialog() {
-        document.getElementById('dialogOverlay').style.display = 'none';
-        document.getElementById('welcomeDialog').style.display = 'none';
-    }
-    </script>
-    
     <script src="script.js"></script>
 
     <!-- Add this where you want the GIF to appear in your HTML -->
