@@ -9,7 +9,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "/Users/lawrencesxp/Desktop/SupplyChainMaster/index.html"
+            "file": "/Users/lawrencesxp/Desktop/steelrefinery/index.html"
         }
     ]
 }
