@@ -20,10 +20,10 @@ document.getElementById("lfmax").innerText = lfmax;
 let currentaccount = parseInt(document.getElementById("currentaccount").innerText);
 let expenses = parseInt(document.getElementById("expenses").innerText);
 let forecast = 0; // Initialize to 0 since the span is empty
-let RefinedSteel = 0;
+let steelInv = 0;
 let efficiency = 0;
 efficiency = parseInt(document.getElementById("efficiency").innerText)
-RefinedSteel = parseInt(document.getElementById("RefinedSteel").innerText)|| 0;
+steelInv = parseInt(document.getElementById("steelInv").innerText)|| 0;
 
 /* 
 // Function to save the game state to localStorage
@@ -167,8 +167,8 @@ function RefineSteel(){
   const limestone = parseFloat(document.getElementById("limestone").innerText);
 
   const steelAmount = calculateSteel(iron, coke, limestone);
-  RefinedSteel = (RefinedSteel + steelAmount) * (efficiency/100);
-  document.getElementById("RefinedSteel").textContent = RefinedSteel;
+  steelInv = (steelInv + steelAmount) * (efficiency/100);
+  document.getElementById("steelInv").textContent = steelInv;
   document.getElementById("iron").innerText = "0";
   document.getElementById("coke").innerText = "0";
   document.getElementById("limestone").innerText = "0";
@@ -192,15 +192,19 @@ setInterval(function() {
   // saveGame();
 }, 1000); // Runs every 1 seconds
 
+let currentWeek = 1;
+
 function SellSteel(){
   
-  s_income = s_income + (RefinedSteel * 880);
+  s_income = s_income + (steelInv * 880);
   document.getElementById("s_income").innerText = s_income;
 
-  RefinedSteel = 0;
-  document.getElementById("RefinedSteel").innerText = RefinedSteel;
+  steelInv = 0;
+  document.getElementById("steelInv").innerText = steelInv;
   // currentaccount = forecast;
   // saveGame();
+  currentWeek++;
+  document.getElementById('weekDisplay').innerText = 'Week ' + currentWeek;
 }
 
 function resetGame() {
@@ -212,42 +216,43 @@ const companyData = {
   usa: {
       name: "US Steel",
       image: "images/usa-company.jpg",
-      bgcolor: "#4169E1",
+      bgcolor: "#a7a8ec",
       // bgimage: "korea_bg.jpg"
       message: "Founded by John Pierpont Morgan Sr. in 1901, we were once the backbone of America's industrial might. Help us reindustrialize with increased domestic production, providing jobs and protecting national interests."
   },
   china: {
       name: "Baowu Steel Group",
       image: "images/china-company.jpg",
-      bgcolor: "#DC143C",
+      bgcolor: "#f37070",
       message: "Wholly owned and operated by the State Council of the People's Republic of China, we are the world's single largest steel producer. Let us forge the fruits of socialist labour."
   },
   eu: {
       name: "ArselorMittal",
+      bgcolor: "#637ef8",
       image: "images/eu-company.jpg",
       message: "we suck crazy style. i am europe i like da ciggarette and unemployment."
   },
   russia: {
       name: "Magnitogorsk Iron & Steel",
-      bgcolor: "#8B0000",
+      bgcolor: "#aea1a1",
       image: "images/russia-company.jpg",
       message: "Situated by the great Ural mountains, Magnitogorsk or 'city of the magnetic mountain' was established through Joseph Vissarionovich Stalin's first five-year plans."
   },
   japan: {
       name: "Nippon",
-      bgcolor: "#FF69B4",
+      bgcolor: "#f2c2eb",
       image: "images/japan-company.jpg",
       message: "japan! we are japan! we make steel! japan!"
   },
   india: {
       name: "Tatta Steel",
-      bgcolor: "#FF8C00",
+      bgcolor: "#f9f5a7",
       image: "images/india-company.jpg",
       message: "i really don't know what to put in here."
   },
   korea: {
       name: "POSKO",
-      bgcolor: "#00CED1",
+      bgcolor: "#c1fef4",
       image: "images/southkorea-company.jpg",
       message: "steel but korean. that is all there is to say."
   }

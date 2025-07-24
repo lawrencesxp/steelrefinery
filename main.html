@@ -1,6 +1,6 @@
 <html>
     <title>Main</title>
-    <head><b>Steel Refinery <a href="https://github.com/lawrencesxp/steelrefinery">Github</a> (WIP)</b>
+    <head><b>Steel Refinery <a href="https://github.com/lawrencesxp/steelrefinery" target="_blank">Github</a> (WIP)</b>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Supply Chain Master</title>
@@ -69,8 +69,8 @@
                 <br><br>
                 <font size="3"><p id="welcomeMessage"></p></font>
                 <br>
-                <button class="dialogButton" onclick="closeDialog()">Begin Operations</button>
                 <button class="dialogButton" onclick="location.href = 'index.html';">Back</button>
+                <button class="dialogButton" onclick="closeDialog()">Begin Operations</button>
             </center>
         </div>
         
@@ -79,9 +79,10 @@
             <div class="left-column">
         <!-- Back-->
          <br><a href= "index.html">Back</a>
+         <h3 id="weekDisplay">Week 1</h3>
          <p><br>Steel is made by refining iron with coke and limestone. One ton of steel is created by processing 1.5 tons of iron,
              0.5 tons of coal and 0.25 tons of limestone.
-             <a href="info.html">Tutorial</a></p>
+             <a href="info.html" target="_blank">Tutorial</a></p>
         
              <p><b>Procurement</b><br>Price of Iron: $115/ton<br>
                 Coke Price: $275/ton<br>
@@ -110,7 +111,7 @@
 
         <p>Amount of steel that can be produced: <span id="steelAmount">0</span> ton(s)<br>
             Market Price: $880/ton<br>
-            Refined Steel: <span id="RefinedSteel"></span> ton(s)<br></p>
+            Refined Steel: <span id="steelInv"></span> ton(s)<br></p>
         <button onclick="RefineSteel()">Refine steel</button>
         <button onclick="SellSteel()">Sell steel inventory</button>
             
