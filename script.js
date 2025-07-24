@@ -212,11 +212,14 @@ const companyData = {
   usa: {
       name: "US Steel",
       image: "images/usa-company.jpg",
+      bgcolor: "#4169E1",
+      // bgimage: "korea_bg.jpg"
       message: "Founded by John Pierpont Morgan Sr. in 1901, we were once the backbone of America's industrial might. Help us reindustrialize with increased domestic production, providing jobs and protecting national interests."
   },
   china: {
       name: "Baowu Steel Group",
       image: "images/china-company.jpg",
+      bgcolor: "#DC143C",
       message: "Wholly owned and operated by the State Council of the People's Republic of China, we are the world's single largest steel producer. Let us forge the fruits of socialist labour."
   },
   eu: {
@@ -226,21 +229,25 @@ const companyData = {
   },
   russia: {
       name: "Magnitogorsk Iron & Steel",
+      bgcolor: "#8B0000",
       image: "images/russia-company.jpg",
       message: "Situated by the great Ural mountains, Magnitogorsk or 'city of the magnetic mountain' was established through Joseph Vissarionovich Stalin's first five-year plans."
   },
   japan: {
       name: "Nippon",
+      bgcolor: "#FF69B4",
       image: "images/japan-company.jpg",
       message: "japan! we are japan! we make steel! japan!"
   },
   india: {
       name: "Tatta Steel",
+      bgcolor: "#FF8C00",
       image: "images/india-company.jpg",
       message: "i really don't know what to put in here."
   },
   korea: {
       name: "POSKO",
+      bgcolor: "#00CED1",
       image: "images/southkorea-company.jpg",
       message: "steel but korean. that is all there is to say."
   }
