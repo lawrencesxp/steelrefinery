@@ -1,109 +1,295 @@
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
     <title>Steel Refinery</title>
-    </head>
-        <body bgcolor="lightsteelblue">
+    <style>
 
-            <center>
-            <h1><font face="Times New Roman" size="6">Select your refinery! <a href="info.html">Tutorial</a></font></h1>
-            <hr width="80%"><br>
+        .main-container {
+            display: flex;
+            gap: 30px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .left-section {
+            flex: 0 0 600px; /* Fixed width for left section */
+        }
+        
+        .right-section {
+            flex: 1; /* Takes remaining space */
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        
+        /* Simple grid layout for refineries */
+        .refinery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 0 20px;
+        }
+        
+        .refinery-item {
+            text-align: center;
+            padding: 15px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+        
+        .refinery-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .refinery-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Steel production table styling */
+        .steel-production-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            margin: 10px 0;
+        }
+        
+        .steel-production-table th,
+        .steel-production-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        .steel-production-table th {
+            background-color: #4a5568;
+            color: white;
+        }
+        
+        .steel-production-table tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+        
+        .steel-production-table .world-total {
+            background-color: #e2e8f0;
+            font-weight: bold;
+        }
+        
+        /* Split right section into two columns */
+        .right-columns {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .table-column {
+            flex: 0 0 48%;
+        }
+        
+        .future-column {
+            flex: 1;
+            padding: 0 15px;
+        }
+        
+        /* Vertical split - top and bottom halves */
+        .top-half {
+            margin-bottom: 30px;
+        }
+        
+        .bottom-half {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body bgcolor="lightsteelblue">
 
-        <table border="1" cellpadding="10" cellspacing="0" width="90%">
+<div class="main-container">
 
-            <tr>
-            <!-- American Company -->
-            <td align="center" width="20%">
+    <div class="left-section">
+        <center>
+            <h1><font face="Times New Roman" size="5">Select your refinery! <a href="info.html">Tutorial</a></font></h1>
+            <hr width="100%"><br>
+        </center>
+
+        <div class="refinery-grid">
+
+            <div class="refinery-item">
                 <a href="main.html?company=usa">
-                <img src="images/usa-company.jpg" width="150" height="100" border="0">
-                <br><br>
-                <font face="Times New Roman" size="3"><b>US Steel</b></font>
-                <br>
-                <font face="Times New Roman" size="2">Pittsburgh</font>
+                    <img src="images/usa-company.jpg" width="120" height="80" border="0">
+                    <br><br>
+                    <font face="Times New Roman" size="3"><b>US Steel</b></font>
+                    <br>
+                    <font face="Times New Roman" size="2">Pittsburgh</font>
                 </a>
-            </td>
-
-            <!-- Chinese Company -->
-            <td align="center" width="33%">
-                <a href="main.html?company=china"">
-                <img src="images/china-company.jpg" width="150" height="100" border="0">
-                <br><br>
-                <font face="Times New Roman" size="3"><b>Baowu Steel Group</b></font>
-                <br>
-                <font face="Times New Roman" size="2">Shanghai</font>
+            </div>
+            
+            <div class="refinery-item">
+                <a href="main.html?company=china">
+                    <img src="images/china-company.jpg" width="120" height="80" border="0">
+                    <br><br>
+                    <font face="Times New Roman" size="3"><b>Baowu Steel Group</b></font>
+                    <br>
+                    <font face="Times New Roman" size="2">Shanghai</font>
                 </a>
-            </td>
+            </div>
 
-            <!-- EU Company -->
-            <td align="center" width="33%">
+
+            <div class="refinery-item">
                 <a href="main.html?company=eu">
-                <img src="images/eu-company.jpg" width="150" height="100" border="0">
-                <br><br>
-                <font face="Times New Roman" size="3"><b>ArselorMittal</b></font>
-                <br>
-                <font face="Times New Roman" size="2">Luxembourg City</font>
+                    <img src="images/eu-company.jpg" width="120" height="80" border="0">
+                    <br><br>
+                    <font face="Times New Roman" size="3"><b>ArselorMittal</b></font>
+                    <br>
+                    <font face="Times New Roman" size="2">Luxembourg City</font>
                 </a>
-            </td>
-            </tr>
-            <tr>
-
-            <!-- Russian Company -->
-            <td align="center" width="33%">
-                <a href="main.html?company=russia"">
-                <img src="images/russia-company.jpg" width="150" height="100" border="0">
-                <br><br>
-                <font face="Times New Roman" size="3"><b>Magnitogorsk Iron & Steel</b></font>
-                <br>
-                <font face="Times New Roman" size="2">Magnitogorsk</font>
+            </div>
+            
+            <div class="refinery-item">
+                <a href="main.html?company=russia">
+                    <img src="images/russia-company.jpg" width="120" height="80" border="0">
+                    <br><br>
+                    <font face="Times New Roman" size="3"><b>Magnitogorsk Iron & Steel</b></font>
+                    <br>
+                    <font face="Times New Roman" size="2">Magnitogorsk</font>
                 </a>
-            </td>
+            </div>
 
-            <!-- Japanese Company -->
-            <td align="center" width="33%">
-                <a href="main.html?company=japan"">
-                <img src="images/japan-company.jpg" width="150" height="100" border="0">
-                <br><br>
-                <font face="Times New Roman" size="3"><b>Nippon</b></font>
-                <br>
-                <font face="Times New Roman" size="2">Tokyo</font>
+
+            <div class="refinery-item">
+                <a href="main.html?company=japan">
+                    <img src="images/japan-company.jpg" width="120" height="80" border="0">
+                    <br><br>
+                    <font face="Times New Roman" size="3"><b>Nippon</b></font>
+                    <br>
+                    <font face="Times New Roman" size="2">Tokyo</font>
                 </a>
-            </td>
-
-            <!-- Indian Company -->
-            <td align="center" width="33%">
-                <a href="main.html?company=india"">
-                <img src="images/india-company.jpg" width="150" height="100" border="0">
-                <br><br>
-                <font face="Times New Roman" size="3"><b>Tatta Steel</b></font>
-                <br>
-                <font face="Times New Roman" size="2">Mumbai</font>
+            </div>
+            
+            <div class="refinery-item">
+                <a href="main.html?company=india">
+                    <img src="images/india-company.jpg" width="120" height="80" border="0">
+                    <br><br>
+                    <font face="Times New Roman" size="3"><b>Tatta Steel</b></font>
+                    <br>
+                    <font face="Times New Roman" size="2">Mumbai</font>
                 </a>
-            </td>
-            </tr>
-            </table>
+            </div>
 
+            <div class="refinery-item">
+                <a href="main.html?company=korea">
+                    <img src="images/southkorea-company.jpg" width="120" height="80" border="0">
+                    <br><br>
+                    <font face="Times New Roman" size="3"><b>POSKO</b></font>
+                    <br>
+                    <font face="Times New Roman" size="2">Pohang</font>
+                </a>
+            </div>
+            
+            <div class="refinery-item">
+
+                <div style="width: 120px; height: 80px; background-color: #ccc; display: inline-block; line-height: 80px;">
+                    <font face="Times New Roman" size="2" color="#666">Custom plant</font>
+                </div>
+                <br><br>
+                <font face="Times New Roman" size="3"><b>New Plant</b></font>
+                <br>
+                <font face="Times New Roman" size="2">?</font>
+            </div>
+        </div>
+
+        <center>
             <br>
+            <hr width="100%">
+            <font face="Times New Roman" size="2">
+                <i>Click on any company to begin</i>
+            </font>
+        </center>
+    </div>
 
-            <!-- Korean Company Row -->
-            <table border="1" cellpadding="10" cellspacing="0" width="30%">
-            <tr>
-            <td align="center">
-            <a href="main.html?company=korea"">
-            <img src="images/southkorea-company.jpg" width="150" height="100" border="0">
-            <br><br>
-            <font face="Times New Roman" size="3"><b>POSKO</b></font>
-            <br>
-            <font face="Times New Roman" size="2">Pohang</font>
-            </a>
-            </td>
-            </tr>
-            </table>
+    <!-- RIGHT SECTION - Split into top and bottom halves -->
+    <div class="right-section">
+        <!-- TOP HALF - Split into two columns -->
+        <div class="top-half">
+            <div class="right-columns">
+                <!-- Left column - Steel Production Table -->
+                <div class="table-column">
+                    <h3><font face="Times New Roman">Global Steel Production (2024)</font></h3>
+                    
+                    <table class="steel-production-table">
+                        <thead>
+                            <tr>
+                                <th><font face="Times New Roman">Rank</font></th>
+                                <th><font face="Times New Roman">Country</font></th>
+                                <th style="text-align: right;"><font face="Times New Roman">Production<br>(1000 MT)</font></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="world-total">
+                                <td><font face="Times New Roman">—</font></td>
+                                <td><font face="Times New Roman"><b>World Total</b></font></td>
+                                <td style="text-align: right;"><font face="Times New Roman"><b>1,884,583</b></font></td>
+                            </tr>
+                            <tr>
+                                <td><font face="Times New Roman">1</font></td>
+                                <td><font face="Times New Roman">China</font></td>
+                                <td style="text-align: right;"><font face="Times New Roman">1,005,090</font></td>
+                            </tr>
+                            <tr>
+                                <td><font face="Times New Roman">2</font></td>
+                                <td><font face="Times New Roman">India</font></td>
+                                <td style="text-align: right;"><font face="Times New Roman">149,421</font></td>
+                            </tr>
+                            <tr>
+                                <td><font face="Times New Roman">3</font></td>
+                                <td><font face="Times New Roman">Japan</font></td>
+                                <td style="text-align: right;"><font face="Times New Roman">84,009</font></td>
+                            </tr>
+                            <tr>
+                                <td><font face="Times New Roman">4</font></td>
+                                <td><font face="Times New Roman">United States</font></td>
+                                <td style="text-align: right;"><font face="Times New Roman">79,457</font></td>
+                            </tr>
+                            <tr>
+                                <td><font face="Times New Roman">5</font></td>
+                                <td><font face="Times New Roman">Russia</font></td>
+                                <td style="text-align: right;"><font face="Times New Roman">71,007</font></td>
+                            </tr>
+                            <tr>
+                                <td><font face="Times New Roman">6</font></td>
+                                <td><font face="Times New Roman">South Korea</font></td>
+                                <td style="text-align: right;"><font face="Times New Roman">63,611</font></td>
+                            </tr>
+                            <tr>
+                                <td><font face="Times New Roman">7</font></td>
+                                <td><font face="Times New Roman">Germany</font></td>
+                                <td style="text-align: right;"><font face="Times New Roman">37,234</font></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p style="text-align: center; margin-top: 10px;">
+                        <font face="Times New Roman" size="2"><a href =https://worldsteel.org/data/annual-production-steel-data target=”_blank”><i>Source: World Steel Association, 2024</i></a></font>
+                    </p>
+                </div>
+                
 
-            <br><br>
-            <hr width="80%">
-    <font face="Times New Roman" size="2">
-    <i>Click on any company to begin</i>
-    </font>
-    </center>
- </body>
+                <div class="rightside-column">
+                    <h3><font face="Times New Roman">News</font></h3>
+                    <p><font face="Times New Roman" size="3">
+                        
+                    </font></p>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="bottom-half">
+            <h3><font face="Times New Roman">Trivia </font></h3>
+            <p><font face="Times New Roman" size="3">
+                
+            </font></p>
+        </div>
+    </div>
+</div>
+
+</body>
 </html>
